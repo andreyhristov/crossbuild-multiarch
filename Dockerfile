@@ -1,8 +1,8 @@
-FROM multiarch/crossbuild
+FROM andreyhristov/crossbuild
 
-RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
-RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
-
+#RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
+#RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
 RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev \
