@@ -5,6 +5,7 @@ FROM andreyhristov/crossbuild
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
 RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        libstdc++6 \
 	libtinyxml2-dev \
 	libopencv-dev \
 	libgstreamer1.0-dev \
