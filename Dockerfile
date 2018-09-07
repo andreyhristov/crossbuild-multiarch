@@ -14,7 +14,7 @@ RUN	apt-get update && \
 	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
-RUN dpkg -i /pylon_5.1.0.12682-deb0_arm64.deb
+RUN dpkg -i --force-all /pylon_5.1.0.12682-deb0_arm64.deb
 
 RUN echo "int main() { int a=42;return 0;}" > /workdir/a.c
 RUN echo "gcc a.c -o a" > /workdir/compile-all.sh && chmod 777 /workdir/compile-all.sh 
