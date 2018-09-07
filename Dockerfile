@@ -1,4 +1,5 @@
-FROM andreyhristov/crossbuild
+#FROM andreyhristov/crossbuild
+FROM multiarch/crossbuild
 
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
