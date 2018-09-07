@@ -8,6 +8,8 @@ RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
 	libopencv-core-dev:arm64 \
+	opencv-data \
+	libopencv-flann-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean
