@@ -12,6 +12,7 @@ RUN	apt-get update && \
 	libopencv-flann-dev:arm64 \
 	libopencv-imgproc-dev:arm64 \
 	libopencv-photo-dev:arm64 \
+	libopencv-calib3d-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean
