@@ -4,6 +4,10 @@ FROM andreyhristov/crossbuild
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
+#
+# libgstreamer1.0-dev:amd64 is needed because otherwise pkg-config gstreamer-1.0 won't work
+# The gstreamer-1.0.pc file will not be installed
+#
 RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
@@ -13,6 +17,7 @@ RUN	apt-get update && \
 	libopencv-imgproc-dev:arm64 \
 	libopencv-photo-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
+	libgstreamer1.0-dev:amd64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean
 
