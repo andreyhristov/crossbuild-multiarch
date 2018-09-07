@@ -4,8 +4,8 @@ FROM andreyhristov/crossbuild
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
-RUN	apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && \
+      DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
 	libopencv-core-dev:arm64 \
 	opencv-data \
@@ -15,6 +15,12 @@ RUN	apt-get update && \
 	libopencv-calib3d-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
+	&& apt-get clean
+
+RUN apt-get update && \
+      DEBIAN_FRONTEND=noninteractive apt-get install -y \
+	libgstreamer1.0-dev:amd64 \
+	libopencv-dev:amd64 \
 	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
