@@ -6,11 +6,10 @@ FROM andreyhristov/crossbuild
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
 RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        libstdc++ \
-	libtinyxml2-dev \
-	libopencv-dev \
-	libgstreamer1.0-dev \
-	libgstreamer-plugins-base1.0-dev \
+	libtinyxml2-dev:arm64 \
+	libopencv-core-dev:arm64 \
+	libgstreamer1.0-dev:arm64 \
+	libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
