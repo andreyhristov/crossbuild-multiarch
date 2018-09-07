@@ -1,12 +1,12 @@
-#FROM andreyhristov/crossbuild
-FROM multiarch/crossbuild
+FROM andreyhristov/crossbuild
+#FROM multiarch/crossbuild
 
-RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
-RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
+#RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
+#RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
 RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        libstdc++6 \
+        libstdc++ \
 	libtinyxml2-dev \
 	libopencv-dev \
 	libgstreamer1.0-dev \
