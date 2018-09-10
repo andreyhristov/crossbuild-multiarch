@@ -15,6 +15,9 @@ RUN apt-get update && \
 	libopencv-calib3d-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
+	libglib2.0-dev:arm64 \
+	libxml2-dev:arm64 \
+	libicu-dev:arm64 \
 	&& apt-get clean
 
 #These are needed so pkg-config can find the packages and also some header files are missing from the arm64 debs :(
