@@ -19,6 +19,7 @@ RUN apt-get update && \
 
 RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
+	libgstreamer-plugins-base1.0-dev:amd64 \
 	libgstreamer1.0-dev:amd64 \
 	libopencv-dev:amd64 \
 	&& apt-get clean
