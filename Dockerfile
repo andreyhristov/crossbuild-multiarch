@@ -17,6 +17,8 @@ RUN apt-get update && \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean
 
+#These are needed so pkg-config can find the packages and also some header files are missing from the arm64 debs :(
+#Seems not to be mixable with the other packages in one apt-get install, there was an error.
 RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libgstreamer-plugins-base1.0-dev:amd64 \
