@@ -1,9 +1,10 @@
-FROM andreyhristov/crossbuild
+FROM andreyhristov/crossbuild:xenial-curl
 #FROM multiarch/crossbuild
 
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
+
 RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
@@ -15,6 +16,7 @@ RUN apt-get update && \
 	libopencv-calib3d-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
+	gir1.2-gstreamer-1.0:arm64
 	libglib2.0-dev:arm64 \
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
@@ -22,12 +24,6 @@ RUN apt-get update && \
 
 #These are needed so pkg-config can find the packages and also some header files are missing from the arm64 debs :(
 #Seems not to be mixable with the other packages in one apt-get install, there was an error.
-RUN apt-get update && \
-      DEBIAN_FRONTEND=noninteractive apt-get install -y \
-	libgstreamer-plugins-base1.0-dev:amd64 \
-	libgstreamer1.0-dev:amd64 \
-	libopencv-dev:amd64 \
-	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
 RUN dpkg -i --force-all /pylon_5.1.0.12682-deb0_arm64.deb
