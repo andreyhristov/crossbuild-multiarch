@@ -16,7 +16,7 @@ RUN apt-get update && \
 	libopencv-calib3d-dev:arm64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
-	gir1.2-gstreamer-1.0:arm64
+	gir1.2-gstreamer-1.0:arm64 \
 	libglib2.0-dev:arm64 \
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
