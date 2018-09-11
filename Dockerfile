@@ -1,4 +1,4 @@
-FROM andreyhristov/crossbuild
+FROM andreyhristov/crossbuild:bionic-curl
 #FROM multiarch/crossbuild
 
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
