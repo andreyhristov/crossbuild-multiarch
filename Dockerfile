@@ -8,7 +8,6 @@ RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
 	libopencv-core-dev:arm64 \
-	opencv-data \
 	libopencv-flann-dev:arm64 \
 	libopencv-imgproc-dev:arm64 \
 	libopencv-photo-dev:arm64 \
