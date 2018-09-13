@@ -12,6 +12,15 @@ RUN apt-get update && \
 	libopencv-imgproc-dev:arm64 \
 	libopencv-photo-dev:arm64 \
 	libopencv-calib3d-dev:arm64 \
+	libopencv-video-dev:arm64 \
+	libopencv-objdetect-dev:arm64 \
+	libopencv-objdetect2.4v5:arm64 \
+	libopencv-ml-dev:arm64 \
+	libopencv-ml2.4v5:arm64 \
+	libopencv-contrib-dev:arm64\
+	python:amd64 \
+	python-minimal:amd64 \
+	python2.7-minimal:amd64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	libglib2.0-dev:arm64 \
