@@ -4,7 +4,6 @@ FROM andreyhristov/crossbuild:xenial-curl
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
-
 RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
@@ -19,6 +18,13 @@ RUN apt-get update && \
 	libopencv-ml-dev:arm64 \
 	libopencv-ml2.4v5:arm64 \
 	libopencv-contrib-dev:arm64\
+	libglib2.0-dev:arm64 \
+	libopencv-gpu-dev:arm64 \
+	libopencv-legacy-dev:arm64 \
+	libopencv-ocl-dev:arm64 \
+	libopencv-stitching-dev:arm64 \
+	libopencv-superres-dev:arm64 \
+	libopencv-videostab-dev:arm64 \
 	python:amd64 \
 	python-minimal:amd64 \
 	python2.7-minimal:amd64 \
