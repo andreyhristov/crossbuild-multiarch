@@ -18,13 +18,14 @@ RUN apt-get update && \
 	libopencv-ml-dev:arm64 \
 	libopencv-ml2.4v5:arm64 \
 	libopencv-contrib-dev:arm64\
-	libglib2.0-dev:arm64 \
 	libopencv-gpu-dev:arm64 \
 	libopencv-legacy-dev:arm64 \
 	libopencv-ocl-dev:arm64 \
 	libopencv-stitching-dev:arm64 \
 	libopencv-superres-dev:arm64 \
 	libopencv-videostab-dev:arm64 \
+	libopencv-ts-dev:arm64 \
+	libglib2.0-dev:arm64 \
 	python:amd64 \
 	python-minimal:amd64 \
 	python2.7-minimal:amd64 \
@@ -33,7 +34,6 @@ RUN apt-get update && \
 	libglib2.0-dev:arm64 \
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
-	&& apt-get clean
 
 #These are needed so pkg-config can find the packages and also some header files are missing from the arm64 debs :(
 #Seems not to be mixable with the other packages in one apt-get install, there was an error.
