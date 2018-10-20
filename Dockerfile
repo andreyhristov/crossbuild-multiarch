@@ -54,3 +54,9 @@ WORKDIR /workdir
 RUN crossbuild ./compile-all.sh
 
 RUN file /workdir/a
+
+RUN curl https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/cuda-repo-ubuntu1604-9-0-local_9.0.252-1_amd64.deb -o cuda-cross.deb \
+  && dpkg -i cuda-cross.deb \
+  && rm cuda-cross.deb
+
+  
