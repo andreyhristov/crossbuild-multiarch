@@ -37,6 +37,10 @@ RUN apt-get update && \
 	libopencv-dev:amd64 \
 	&& apt-get clean
 
+RUN curl https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/cuda-repo-l4t-9-0-local_9.0.252-1_arm64.deb -o cuda_arm64.deb \
+   && dpkg -i cuda_arm64.deb \
+   && rm cuda_arm64.deb
+
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
 RUN dpkg -i --force-all /pylon_5.1.0.12682-deb0_arm64.deb
 
