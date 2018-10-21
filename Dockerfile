@@ -50,12 +50,15 @@ RUN crossbuild ./compile-all.sh
 
 RUN file /workdir/a
 
-#RUN curl https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/cuda-repo-l4t-9-0-local_9.0.252-1_arm64.deb -o cuda_arm64.deb \
-#   && dpkg -i cuda_arm64.deb \
-#   && rm cuda_arm64.deb
+RUN curl https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/cuda-repo-l4t-9-0-local_9.0.252-1_arm64.deb -o cuda_arm64.deb \
+   && dpkg -i cuda_arm64.deb \
+   && rm cuda_arm64.deb
 
-RUN curl https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/cuda-repo-ubuntu1604-9-0-local_9.0.252-1_amd64.deb -o cuda-cross.deb \
-  && dpkg -i cuda-cross.deb \
-  && rm cuda-cross.deb
+RUN curl -o cudnn.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39//libcudnn7_7.1.5.14-1+cuda9.0_arm64.deb \
+  && dpkg -i cudnn.deb \
+  && rm cudnn.deb
 
-  
+RUN curl -o cudnn-dev.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39//libcudnn7-dev_7.1.5.14-1+cuda9.0_arm64.deb \
+  && dpkg -i cudnn-dev.deb \
+  && rm cudnn-dev.deb
+ 
