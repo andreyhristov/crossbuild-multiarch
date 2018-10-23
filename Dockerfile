@@ -34,6 +34,7 @@ RUN apt-get update && \
 	libglib2.0-dev:arm64 \
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
+	cmake \
 	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
