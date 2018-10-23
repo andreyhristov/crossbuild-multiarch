@@ -65,3 +65,5 @@ RUN curl -o cudnn-dev.deb https://developer.download.nvidia.com/devzone/devcente
   && dpkg -i cudnn-dev.deb \
   && rm cudnn-dev.deb
  
+RUN wget https://github.com/opencv/opencv/archive/3.4.3.tar.gz -O opencv3.4.3.tar.gz \
+  && tar zxvf opencv3.4.3.tar.gz 
