@@ -4,27 +4,29 @@ FROM andreyhristov/crossbuild:xenial-curl
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie main > /etc/apt/sources.list
 #RUN echo deb ftp://ftp.de.debian.org/debian jessie-updates main >> /etc/apt/sources.list
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https
+
+#	libopencv-core-dev:arm64 \
+#	libopencv-flann-dev:arm64 \
+#	libopencv-imgproc-dev:arm64 \
+#	libopencv-photo-dev:arm64 \
+#	libopencv-calib3d-dev:arm64 \
+#	libopencv-video-dev:arm64 \
+#	libopencv-objdetect-dev:arm64 \
+#	libopencv-objdetect2.4v5:arm64 \
+#	libopencv-ml-dev:arm64 \
+#	libopencv-ml2.4v5:arm64 \
+#	libopencv-contrib-dev:arm64\
+#	libopencv-gpu-dev:arm64 \
+#	libopencv-legacy-dev:arm64 \
+#	libopencv-ocl-dev:arm64 \
+#	libopencv-stitching-dev:arm64 \
+#	libopencv-superres-dev:arm64 \
+#	libopencv-videostab-dev:arm64 \
+#	libopencv-ts-dev:arm64 \
+
 RUN apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libtinyxml2-dev:arm64 \
-	libopencv-core-dev:arm64 \
-	libopencv-flann-dev:arm64 \
-	libopencv-imgproc-dev:arm64 \
-	libopencv-photo-dev:arm64 \
-	libopencv-calib3d-dev:arm64 \
-	libopencv-video-dev:arm64 \
-	libopencv-objdetect-dev:arm64 \
-	libopencv-objdetect2.4v5:arm64 \
-	libopencv-ml-dev:arm64 \
-	libopencv-ml2.4v5:arm64 \
-	libopencv-contrib-dev:arm64\
-	libopencv-gpu-dev:arm64 \
-	libopencv-legacy-dev:arm64 \
-	libopencv-ocl-dev:arm64 \
-	libopencv-stitching-dev:arm64 \
-	libopencv-superres-dev:arm64 \
-	libopencv-videostab-dev:arm64 \
-	libopencv-ts-dev:arm64 \
 	libglib2.0-dev:arm64 \
 	python:amd64 \
 	python-minimal:amd64 \
@@ -34,7 +36,6 @@ RUN apt-get update && \
 	libglib2.0-dev:arm64 \
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
-	cmake \
 	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
@@ -63,7 +64,4 @@ RUN curl -o cudnn.deb https://developer.download.nvidia.com/devzone/devcenter/mo
 
 RUN curl -o cudnn-dev.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39//libcudnn7-dev_7.1.5.14-1+cuda9.0_arm64.deb \
   && dpkg -i cudnn-dev.deb \
-  && rm cudnn-dev.deb
- 
-RUN wget https://github.com/opencv/opencv/archive/3.4.3.tar.gz -O opencv3.4.3.tar.gz \
-  && tar zxvf opencv3.4.3.tar.gz 
+  && rm cudnn-dev.deb 
