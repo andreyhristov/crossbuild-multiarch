@@ -65,3 +65,37 @@ RUN curl -o cudnn.deb https://developer.download.nvidia.com/devzone/devcenter/mo
 RUN curl -o cudnn-dev.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39//libcudnn7-dev_7.1.5.14-1+cuda9.0_arm64.deb \
   && dpkg -i cudnn-dev.deb \
   && rm cudnn-dev.deb 
+  
+RUN curl -o libopencv_3.3.1_amd64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libopencv_3.3.1_t186_arm64.deb \
+  && dpkg -i libopencv_3.3.1_amd64.deb \
+  && rm libopencv_3.3.1_amd64.deb
+
+RUN curl -o libopencv-dev_3.3.1_amd64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libopencv-dev_3.3.1_t186_arm64.deb \
+  && dpkg -i libopencv-dev_3.3.1_amd64.deb \
+  && rm libopencv-dev_3.3.1_amd64.deb
+
+RUN curl -o libopencv-python_3.3.1_amd64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libopencv-python_3.3.1_t186_arm64.deb \
+  && dpkg -i libopencv-python_3.3.1_amd64.deb \
+  && rm libopencv-python_3.3.1_amd64.deb
+
+
+RUN curl -o libnvinfer4_4.1.3-1+cuda9.0_arm64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libnvinfer4_4.1.3-1+cuda9.0_arm64.deb \
+  && dpkg -i libnvinfer4_4.1.3-1+cuda9.0_arm64.deb \
+  && rm libnvinfer4_4.1.3-1+cuda9.0_arm64.deb
+
+RUN curl -o libnvinfer-dev_4.1.3-1+cuda9.0_arm64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libnvinfer-dev_4.1.3-1+cuda9.0_arm64.deb \
+  && dpkg -i libnvinfer-dev_4.1.3-1+cuda9.0_arm64.deb \
+  && rm libnvinfer-dev_4.1.3-1+cuda9.0_arm64.deb
+
+RUN curl -o tensorrt_4.0.2.0-1+cuda9.0_arm64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/tensorrt_4.0.2.0-1+cuda9.0_arm64.deb \
+  && dpkg -i tensorrt_4.0.2.0-1+cuda9.0_arm64.deb \
+  && rm tensorrt_4.0.2.0-1+cuda9.0_arm64.deb
+
+RUN curl -o libgie-dev_4.1.3-1+cuda9.0_arm64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libgie-dev_4.1.3-1+cuda9.0_arm64.deb \
+  && dpkg -i libgie-dev_4.1.3-1+cuda9.0_arm64.deb \
+  && rm libgie-dev_4.1.3-1+cuda9.0_arm64.deb
+
+#RUN curl -o xxxx xxxxx \
+#  && dpkg -i xxx \
+#  && rm xxx
+
