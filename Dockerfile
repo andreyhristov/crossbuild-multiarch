@@ -39,11 +39,10 @@ RUN echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial main res
 	curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - && \
 	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
+	python3-minimal:amd64 \
+	python3-pip:amd64 \
 	libtinyxml2-dev:arm64 \
 	libglib2.0-dev:arm64 \
-	python:amd64 \
-	python-minimal:amd64 \
-	python2.7-minimal:amd64 \
 	libgstreamer1.0-dev:arm64 \
 	libgstreamer-plugins-base1.0-dev:arm64 \
 	libglib2.0-dev:arm64 \
