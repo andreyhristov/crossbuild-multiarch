@@ -24,20 +24,20 @@ FROM andreyhristov/crossbuild:xenial-curl
 #	libopencv-videostab-dev:arm64 \
 #	libopencv-ts-dev:arm64 \
 
-RUN echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial main restricted" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates main restricted" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64]  http://ports.ubuntu.com/ubuntu-ports/ xenial universe" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates universe" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial multiverse" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates multiverse" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security main restricted" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security universe" >> /etc/apt/sources.list && \
-	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security multiverse" >> /etc/apt/sources.list && \
-	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 && \
-	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 && \
-	curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - && \
-	apt-get update && \
+#RUN echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial main restricted" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates main restricted" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64]  http://ports.ubuntu.com/ubuntu-ports/ xenial universe" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates universe" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial multiverse" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-updates multiverse" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security main restricted" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security universe" >> /etc/apt/sources.list && \
+#	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security multiverse" >> /etc/apt/sources.list && \
+#	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 && \
+#	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 && \
+#	curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - && \
+RUN	apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	python3-minimal:amd64 \
 	python3-pip:amd64 \
