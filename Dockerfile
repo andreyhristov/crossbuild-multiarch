@@ -51,17 +51,6 @@ RUN apt-get update && \
 	libjpeg-dev:arm64 \
 	&& apt-get clean
 
-RUN apt-get update && \
-	libavutil-dev:arm64 \
-	libpng-dev:arm64 \
-	libtiff5:arm64 \
-	libtbb-dev:arm64 \
-	libavutil-ffmpeg54:arm64 \
-	libavformat-ffmpeg56:arm64 \
-	libavcodec-ffmpeg56:arm64 \
-	librsvg2-common:arm64 \
-	&& apt-get clean
-
 #RUN apt-get update && \
 #	libavformat-dev:arm64 \
 #	libavcodec-dev:arm64 \
