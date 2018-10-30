@@ -119,11 +119,11 @@ RUN curl -o libopencv_3.3.1_amd64.deb https://developer.download.nvidia.com/devz
   && rm libopencv_3.3.1_amd64.deb
 
 RUN curl -o libopencv-dev_3.3.1_amd64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libopencv-dev_3.3.1_t186_arm64.deb \
-  && dpkg -i libopencv-dev_3.3.1_amd64.deb \
+  && dpkg --force-all -i libopencv-dev_3.3.1_amd64.deb \
   && rm libopencv-dev_3.3.1_amd64.deb
 
 RUN curl -o libopencv-python_3.3.1_amd64.deb https://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.3/lw.xd42/JetPackL4T_33_b39/libopencv-python_3.3.1_t186_arm64.deb \
-  && dpkg -i libopencv-python_3.3.1_amd64.deb \
+  && dpkg --force-all -i libopencv-python_3.3.1_amd64.deb \
   && rm libopencv-python_3.3.1_amd64.deb
 
 
