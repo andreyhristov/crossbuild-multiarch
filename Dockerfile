@@ -52,7 +52,6 @@ RUN apt-get update && \
 	&& apt-get clean
 
 RUN apt-get update && \
-	libavformat-dev:arm64 \
 	libavcodec-dev:arm64 \
 	libavutil-dev:arm64 \
 	libpng-dev:arm64 \
@@ -63,6 +62,19 @@ RUN apt-get update && \
 	libavcodec-ffmpeg56:arm64 \
 	librsvg2-common:arm64 \
 	&& apt-get clean
+
+#RUN apt-get update && \
+#	libavformat-dev:arm64 \
+#	libavcodec-dev:arm64 \
+#	libavutil-dev:arm64 \
+#	libpng-dev:arm64 \
+#	libtiff5:arm64 \
+#	libtbb-dev:arm64 \
+#	libavutil-ffmpeg54:arm64 \
+#	libavformat-ffmpeg56:arm64 \
+#	libavcodec-ffmpeg56:arm64 \
+#	librsvg2-common:arm64 \
+#	&& apt-get clean
 
 COPY pylon_5.1.0.12682-deb0_arm64.deb /
 RUN dpkg -i --force-all /pylon_5.1.0.12682-deb0_arm64.deb
