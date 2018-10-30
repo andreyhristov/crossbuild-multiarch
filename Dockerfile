@@ -52,7 +52,6 @@ RUN apt-get update && \
 	&& apt-get clean
 
 RUN apt-get update && \
-	libavcodec-dev:arm64 \
 	libavutil-dev:arm64 \
 	libpng-dev:arm64 \
 	libtiff5:arm64 \
