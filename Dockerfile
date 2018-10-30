@@ -36,8 +36,8 @@ RUN echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial main res
 	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security multiverse" >> /etc/apt/sources.list && \
 	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 && \
 	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 && \
-	curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - && \
-	apt-get update && \
+	curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add -
+RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	python3-minimal:amd64 \
 	python3-pip:amd64 \
@@ -49,6 +49,9 @@ RUN echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial main res
 	libxml2-dev:arm64 \
 	libicu-dev:arm64 \
 	libjpeg-dev:arm64 \
+	&& apt-get clean
+
+RUN apt-get update && \
 	libavformat-dev:arm64 \
 	libavcodec-dev:arm64 \
 	libavutil-dev:arm64 \
